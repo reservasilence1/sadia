@@ -195,53 +195,30 @@
     }
   </style>
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1209153881085976');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1209153881085976&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <script>
-  window.pixelId = "69337cdb14418ec10c7be710";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
+
 </head>
 <body>
 
   <!-- MENU -->
   <div class="header">
-    <img src="images/logoaqui.webp" alt="Logo Sadia">
+    <img src="roleta/images/logoaqui.webp" alt="Logo Sadia">
     <div class="header-icons">
-      <img src="images/icon-pessoa.webp" alt="Perfil" class="icon-header">
-      <img src="images/icon-coracao.webp" alt="Favoritos" class="icon-header">
-      <img src="images/icon-carrinho.webp" alt="Carrinho" class="icon-header">
+      <img src="roleta/images/icon-pessoa.webp" alt="Perfil" class="icon-header">
+      <img src="roleta/images/icon-coracao.webp" alt="Favoritos" class="icon-header">
+      <img src="roleta/images/icon-carrinho.webp" alt="Carrinho" class="icon-header">
     </div>
   </div>
 
   <!-- LOGO DO EVENTO -->
   <div class="logo-evento">
-    <img src="images/logoevento.png" alt="Logo do Evento">
+    <img src="roleta/images/logoevento.png" alt="Logo do Evento">
   </div>
 
   <!-- ROLETA -->
   <div class="roleta-wrapper">
     <div class="seta"></div>
     <div class="roleta-container">
-      <img src="images/roleta.png" id="roleta" class="roleta">
+      <img src="roleta/images/roleta.png" id="roleta" class="roleta">
     </div>
   </div>
 
@@ -253,7 +230,7 @@ src="https://www.facebook.com/tr?id=1209153881085976&ev=PageView&noscript=1"
     <h2>🎉 Parabéns!</h2>
     <p>Você ganhou 100% de desconto nos kits de Natal Sadia 2025.</p>
     <div class="popup-buttons">
-      <button class="btn-resgatar" onclick="window.location.href='https://kit-natalsadia-2025.shop/loja/'">Resgatar presente</button>
+      <button class="btn-resgatar" onclick="window.location.href='/loja/'">Resgatar presente</button>
     </div>
   </div>
 
@@ -267,13 +244,13 @@ src="https://www.facebook.com/tr?id=1209153881085976&ev=PageView&noscript=1"
   </div>
 
   <!-- ÁUDIOS -->
-  <audio id="somGiro" src="media/giro.mp3"></audio>
-  <audio id="somErro" src="media/erro.mp3"></audio>
-  <audio id="somAcerto" src="media/acerto.mp3"></audio>
+  <audio id="somGiro" src="roleta/media/giro.mp3"></audio>
+  <audio id="somErro" src="roleta/media/erro.mp3"></audio>
+  <audio id="somAcerto" src="roleta/media/acerto.mp3"></audio>
 
   <!-- CONFETTI -->
   <canvas class="confetti" id="confettiCanvas"></canvas>
-  <script src="js/confetti.browser.min.js"></script>
+  <script src="roleta/js/confetti.browser.min.js"></script>
 
   <!-- SCRIPT DA ROLETA -->
   <script>
