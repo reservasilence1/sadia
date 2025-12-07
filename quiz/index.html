@@ -282,48 +282,24 @@
 }
 
   </style>
-   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1209153881085976');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1209153881085976&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <script>
-  window.pixelId = "69337cdb14418ec10c7be710";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
+  
 </head>
 <body>
 
 <!-- MENU -->
 <div class="header">
-  <img src="images/logoaqui.webp" alt="Logo Sadia">
+  <img src="quiz/images/logoaqui.webp" alt="Logo Sadia">
   <div class="header-icons">
-    <img src="images/icon-pessoa.webp" alt="Perfil" class="icon-header">
-    <img src="images/icon-coracao.webp" alt="Favoritos" class="icon-header">
-    <img src="images/icon-carrinho.webp" alt="Carrinho" class="icon-header">
+    <img src="quiz/images/icon-pessoa.webp" alt="Perfil" class="icon-header">
+    <img src="quiz/images/icon-coracao.webp" alt="Favoritos" class="icon-header">
+    <img src="quiz/images/icon-carrinho.webp" alt="Carrinho" class="icon-header">
   </div>
 </div>
 
 <!-- QUIZ -->
 <div class="quiz-container">
   <div class="logo-evento">
-   <img src="images/logoevento.png" alt="Logo do Evento">
+   <img src="quiz/images/logoevento.png" alt="Logo do Evento">
   </div>
   <div class="progress-top">
     <h2 id="stepText">Olá! Pergunta 1 de 11</h2>
@@ -389,17 +365,17 @@ src="https://www.facebook.com/tr?id=1209153881085976&ev=PageView&noscript=1"
 
 <!-- TELA DE CARREGAMENTO -->
 <div class="loading-screen" id="loadingScreen" style="display:none;">
-  <img src="images/spinner.svg" alt="Carregando">
+  <img src="quiz/images/spinner.svg" alt="Carregando">
   ⏳ Conferindo suas respostas...
 </div>
 
 <!-- ÁUDIO -->
-<audio id="somAcerto" src="media/acerto.MP3"></audio>
-<audio id="somErro" src="media/erro.MP3"></audio>
+<audio id="somAcerto" src="quiz/media/acerto.MP3"></audio>
+<audio id="somErro" src="quiz/media/erro.MP3"></audio>
 
 <!-- CONFETTI -->
 <canvas id="confettiCanvas"></canvas>
-<script src="js/confetti.browser.min.js"></script>
+<script src="quiz/js/confetti.browser.min.js"></script>
 <script>
   const questions = [
     { q: "Qual prato é clássico da ceia natalina?", options: ["Pizza", "Pernil", "Tacos", "Sushi"], correct: 1 },
@@ -525,7 +501,7 @@ src="https://www.facebook.com/tr?id=1209153881085976&ev=PageView&noscript=1"
           cursor: pointer;
           animation: fadeIn .8s ease forwards;
         "
-        onclick="window.location.href='https://kit-natalsadia-2025.shop/roleta/'">
+        onclick="window.location.href='/roleta/'">
         DESCOBRIR MEU PRÊMIO AGORA
       </button>
     </div>
