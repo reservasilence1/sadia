@@ -72,7 +72,7 @@
       box-shadow: 0 0 0 4px rgba(248,0,48,.10);
     }
 
-    /* ======== (2) BANNER ABAIXO DA PESQUISA (1296x108) ======== */
+    /* ======== (2) BANNER ABAIXO DA PESQUISA (830x230) ======== */
     .top-banner-wrap{
       background:#fff;
       border-bottom: 1px solid #eee;
@@ -80,8 +80,8 @@
     }
     .top-banner{
       width: 100%;
-      max-width: 1296px;
-      aspect-ratio: 12 / 1; /* 1296x108 */
+      max-width: 830px;         /* alvo desktop */
+      aspect-ratio: 830 / 230;  /* 830x230 */
       height: auto;
       margin: 0 auto;
       border-radius: 12px;
@@ -94,7 +94,7 @@
       width:100%;
       height:100%;
       display:block;
-      object-fit: cover;
+      object-fit: cover; /* mantém preenchido e responsivo */
     }
 
     .breadcrumb {
@@ -159,6 +159,31 @@
       box-shadow: 0 6px 16px rgba(248,0,48,.25);
       z-index: 5;
       letter-spacing:.2px;
+    }
+
+    /* ======== NOVO: selo "Mais vendido" acima do nome ======== */
+    .selo-mais-vendido{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      width: fit-content;
+      max-width: 100%;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.95);
+      background: #fff;
+      color:#111827;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      margin-bottom: 8px;
+    }
+    .selo-mais-vendido svg{
+      width: 14px;
+      height: 14px;
+      fill: var(--brand);
+      flex: 0 0 auto;
     }
 
     /* Área do carrossel */
@@ -422,7 +447,7 @@
   async
   defer
 ></script>
-  
+
 
   <div class="header">
     <img src="/loja/images/americanas.png" alt="Logo Americanas">
@@ -437,10 +462,10 @@
     <input type="text" placeholder="O que você procura?">
   </div>
 
-  <!-- (2) Banner abaixo do bloco de pesquisa (1296x108) -->
+  <!-- (2) Banner abaixo do bloco de pesquisa (830x230) -->
   <div class="top-banner-wrap">
     <div class="top-banner">
-      <!-- troque o src pelo seu banner (ideal 1296x108) -->
+      <!-- troque o src pelo seu banner (ideal 830x230) -->
       <img src="/loja/images/banner.gif" alt="Banner">
     </div>
   </div>
@@ -466,6 +491,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Smartphone Motorola Moto G56 5G 256GB 24GB (8GB RAM+16GB Ram Boost) e 50MP Sony Lytia 600 AI</div>
 
         <!-- (3) Avaliação -->
@@ -502,6 +533,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Air Fryer Mondial Family Inox Fritadeira sem Óleo 4L Antiaderente Cesto Removivel 200ºC 1500W PRETO/INOX 220V</div>
 
         <!-- (3) Avaliação -->
@@ -544,6 +581,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Smart TV 50" LG 4K Ultra HD 50UA8550PSA webOS 25 AI Processor 4K Gen8 com Alexa 3 HDMI</div>
 
         <div class="rating" data-rating>
@@ -585,6 +628,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Fritadeira Elétrica Air Fryer Mondial Forno Oven 12L 2000W Preto/Inox 2000W AFON-12L-BI - 110v</div>
 
         <div class="rating" data-rating>
@@ -625,6 +674,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Fralda Pampers Confort Sec P 50 Unidades</div>
 
         <div class="rating" data-rating>
@@ -658,6 +713,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Caixa de Bombom Especialidades Nestlé 251g</div>
 
         <div class="rating" data-rating>
@@ -692,6 +753,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Fogão Brastemp 4 Bocas Branco com Dupla Chama e Grades Individuais - BFO4EBB - Bivolt</div>
 
         <div class="rating" data-rating>
@@ -733,6 +800,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Árvore de Natal Pinheiro Canadense 1,8m Verde - Festive</div>
 
         <div class="rating" data-rating>
@@ -773,6 +846,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Batata Pringles Original 104g</div>
 
         <div class="rating" data-rating>
@@ -806,6 +885,12 @@
       </div>
 
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Notebook Lenovo IdeaPad 1 15IRU7 Intel Core i3-1315U 8GB 256GB SSD Linux 15.6" - 83QJS00000 Cloud Grey</div>
 
         <div class="rating" data-rating>
@@ -841,6 +926,12 @@
         <div class="carousel-dots"></div>
       </div>
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Geladeira Brastemp Frost Free Duplex 400 litros com Espaço Adapt BRM54JKANA</div>
 
         <div class="rating" data-rating>
@@ -881,6 +972,12 @@
         <div class="carousel-dots"></div>
       </div>
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Lavadora de Roupas Electrolux 11kg Essential Care LED Branca - LES11</div>
 
         <div class="rating" data-rating>
@@ -921,6 +1018,12 @@
         <div class="carousel-dots"></div>
       </div>
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Console PlayStation 5 Slim 1TB + 1 Controle DualSense</div>
 
         <div class="rating" data-rating>
@@ -961,6 +1064,12 @@
         <div class="carousel-dots"></div>
       </div>
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Cafeteira Nespresso Essenza Mini + 30 Cápsulas (Edição Especial)</div>
 
         <div class="rating" data-rating>
@@ -1000,6 +1109,12 @@
         <div class="carousel-dots"></div>
       </div>
       <div class="product-body">
+        <!-- selo "Mais vendido" -->
+        <div class="selo-mais-vendido" aria-label="Mais vendido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.39 6.98L22 9.24l-5.99 4.37L18.18 21 12 16.9 5.82 21l2.17-7.39L2 9.24l7.61-.26L12 2z"/></svg>
+          Mais vendido
+        </div>
+
         <div class="product-name">Fone Bluetooth JBL Tune 510BT com Microfone e Até 40h de Bateria</div>
 
         <div class="rating" data-rating>
